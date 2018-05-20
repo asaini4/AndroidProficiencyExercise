@@ -1,0 +1,48 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+
+        maven {
+            url "https://maven.google.com"
+        }
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+
+        // google-services plugin
+        //classpath 'com.google.gms:google-services:3.1.1'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+}
+
+ext {
+
+    // sdk and tools
+    minSdkVersion = 22
+    targetSdkVersion = 26
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.2'
+
+    // dependencies versions
+    supportLibVersion = '26.0.2'
+    volleyLibVersion = '1.0.0'
+    junitVersion = '4.12'
+    espressoVersion = '2.2.2'
+    uiautomatorVersion = '2.1.2'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
