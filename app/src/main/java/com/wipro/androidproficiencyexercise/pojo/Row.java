@@ -6,9 +6,6 @@ public class Row {
     private String description;
     private Object imageHref;
 
-    /**
-     * No args constructor for use in serialization
-     */
     public Row() {
     }
 

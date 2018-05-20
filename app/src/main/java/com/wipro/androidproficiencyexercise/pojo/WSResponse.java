@@ -8,9 +8,6 @@ public class WSResponse {
 
     private List<Row> rows = null;
 
-    /**
-     * No args constructor for use in serialization
-     */
     public WSResponse() {
     }
 

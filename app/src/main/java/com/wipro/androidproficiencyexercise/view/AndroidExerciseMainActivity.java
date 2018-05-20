@@ -23,9 +23,9 @@ public class AndroidExerciseMainActivity extends AppBaseActivity implements AppI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setAppBar(getResources().getString(R.string.init_appbar_title));
+        setAppBar(getResources().getString(R.string.init_appbar_title)); //Set AppBar default title
 
-        initRecycleView();
+        initRecycleView(); //init RecyclerView
     }
 
     private void initRecycleView() {

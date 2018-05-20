@@ -62,7 +62,7 @@ public class NetworkModel implements AppInterfaces.Action {
                         HttpsURLConnection httpsURLConnection = (HttpsURLConnection) super.createConnection(url);
                         try {
                             httpsURLConnection.setSSLSocketFactory(getSSLSocketFactory());
-                            httpsURLConnection.setHostnameVerifier(getHostnameVerifier("certs.cac.washington.edu"));
+                            httpsURLConnection.setHostnameVerifier(getHostnameVerifier("certs.temp.com"));
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
