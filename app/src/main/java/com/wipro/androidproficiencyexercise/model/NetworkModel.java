@@ -1,43 +1,18 @@
 package com.wipro.androidproficiencyexercise.model;
 
-import android.util.Log;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.wipro.androidproficiencyexercise.R;
 import com.wipro.androidproficiencyexercise.application.AppController;
 import com.wipro.androidproficiencyexercise.interfaces.AppInterfaces;
 import com.wipro.androidproficiencyexercise.pojo.AppPojo;
 import com.wipro.androidproficiencyexercise.pojo.Row;
 import com.wipro.androidproficiencyexercise.pojo.WSResponse;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 import java.util.ArrayList;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509TrustManager;
-
 public class NetworkModel implements AppInterfaces.Action {
 
     private AppInterfaces.ModelInterface appPresenter;
@@ -88,7 +63,9 @@ public class NetworkModel implements AppInterfaces.Action {
             }
         });
 
-        AppController.mInstance.addToRequestQueue(req, network_req_tag, null);
+        AppController.mInstance.cancelPendingRequests(network_req_tag); //Cancel Pending request queue to fetch fresh data from server.
+
+        AppController.mInstance.addToRequestQueue(req, network_req_tag, null); //Start new network request
     }
 
     /**
@@ -126,7 +103,7 @@ public class NetworkModel implements AppInterfaces.Action {
     // which has a server certificate in which "Issued to" is "localhost",for example.
     // Then, inside verify method you can verify "localhost".
     // If not, you can temporarily return true
-    private HostnameVerifier getHostnameVerifier(final String strHostName) {
+   /* private HostnameVerifier getHostnameVerifier(final String strHostName) {
         return new HostnameVerifier() {
             @Override
             public boolean verify(String hostname, SSLSession session) {
@@ -136,9 +113,9 @@ public class NetworkModel implements AppInterfaces.Action {
                 return hv.verify(strHostName, session);
             }
         };
-    }
+    }*/
 
-    private TrustManager[] getWrappedTrustManagers(TrustManager[] trustManagers) {
+    /*private TrustManager[] getWrappedTrustManagers(TrustManager[] trustManagers) {
         final X509TrustManager originalTrustManager = (X509TrustManager) trustManagers[0];
         return new TrustManager[]{
                 new X509TrustManager() {
@@ -172,8 +149,8 @@ public class NetworkModel implements AppInterfaces.Action {
                 }
         };
     }
-
-    private SSLSocketFactory getSSLSocketFactory()
+*/
+    /*private SSLSocketFactory getSSLSocketFactory()
             throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, KeyManagementException {
 
         CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -199,5 +176,5 @@ public class NetworkModel implements AppInterfaces.Action {
         sslContext.init(null, wrappedTrustManagers, null);
 
         return sslContext.getSocketFactory();
-    }
+    }*/
 }

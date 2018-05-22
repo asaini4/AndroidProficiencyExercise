@@ -66,6 +66,7 @@ public class AppController extends Application {
 
     public void cancelPendingRequests(Object tag) {
         if (mRequestQueue != null) {
+            mRequestQueue.getCache().clear(); //Clear the cache
             mRequestQueue.cancelAll(tag);
         }
     }

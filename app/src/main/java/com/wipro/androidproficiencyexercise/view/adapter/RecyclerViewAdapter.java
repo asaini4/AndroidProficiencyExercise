@@ -57,7 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         if(!(title.equalsIgnoreCase("null"))) {
             Viewholder.tv_title.setText(title);
         } else {
-            Viewholder.tv_title.setText("Title is not available");
+            Viewholder.tv_title.setText(R.string.title_not_available);
         }
 
         //Set description
@@ -65,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         if(!(description.equalsIgnoreCase("null"))) {
             Viewholder.tv_description.setText(description);
         } else {
-            Viewholder.tv_description.setText("Description is not available");
+            Viewholder.tv_description.setText(R.string.description_not_available);
         }
     }
 

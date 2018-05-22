@@ -2,7 +2,14 @@
     <string name="app_name">Wipro Android Exercise</string>
     <string name="show_progress">Please Wait</string>
     <string name="init_appbar_title">Android Proficiency Exercise</string>
-
     <string name="internet_connectivity_check">Please Check Internet Connectivity....!</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="title_bar">Title Bar</string>
+    <string name="title_not_available">Title is not available</string>
+    <string name="description_not_available">Description is not available</string>
+
+
+
 
 </resources>

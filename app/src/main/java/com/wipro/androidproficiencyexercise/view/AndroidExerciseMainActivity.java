@@ -3,12 +3,9 @@ package com.wipro.androidproficiencyexercise.view;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
-
 import com.wipro.androidproficiencyexercise.R;
 import com.wipro.androidproficiencyexercise.interfaces.AppInterfaces;
 import com.wipro.androidproficiencyexercise.pojo.WSResponse;
-import com.wipro.androidproficiencyexercise.utils.AppLogs;
 import com.wipro.androidproficiencyexercise.view.adapter.RecyclerViewAdapter;
 
 public class AndroidExerciseMainActivity extends AppBaseActivity implements AppInterfaces.ViewInterface {
